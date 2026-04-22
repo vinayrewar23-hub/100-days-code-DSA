@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+
+// Recursive function
+void mirror(char str[], int start, int end)
+{
+    if (start >= end)   // Base condition
+        return;
+
+    // Swap characters
+    char temp = str[start];
+    str[start] = str[end];
+    str[end] = temp;
+
+    // Recursive call
+    mirror(str, start + 1, end - 1);
+}
+
+int main()
+{
+    char code[100];
+
+    // Input
+    scanf("%s", code);
+
+    // Function call
+    mirror(code, 0, strlen(code) - 1);
+
+    // Output
+    printf("%s", code);
+
+    return 0;
+}
