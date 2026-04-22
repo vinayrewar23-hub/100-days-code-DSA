@@ -1,0 +1,12 @@
+# Recursive function
+def power(a, b):
+    if b == 0:        # Base case
+        return 1
+    else:
+        return a * power(a, b - 1)
+
+# Input
+a, b = map(int, input().split())
+
+# Output
+print(power(a, b))
